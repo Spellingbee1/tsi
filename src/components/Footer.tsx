@@ -1,12 +1,11 @@
-export const Footer = () => {
+import React from 'react';
+
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-8 px-6 border-t border-gray-700">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* Копирайт */}
-        <div className="text-sm">
-          © {new Date().getFullYear()} tsi. Все права не защищены.
-        </div>
-      </div>
+    <footer className="bg-gray-100 p-4 text-center border-t border-gray-300 mt-auto">
+      <p>&copy; {new Date().getFullYear()} Мой Сайт. Все права защищены.</p>
     </footer>
   );
 };
+
+export default Footer;

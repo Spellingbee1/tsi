@@ -1,36 +1,38 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Header = () => {
-  return (
-    <nav className="bg-white shadow-md border-b border-gray-200 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Логотип / название сайта */}
-        <Link to="/" className="text-xl font-bold text-gray-800 hover:text-gray-600 transition">
-          Logo
-        </Link>
+const Header: React.FC = () => {
+    return (
+        <>
+            {/* Тестовый элемент - временно */}
+            <div className="bg-purple-500 text-white p-8 text-center text-2xl font-bold">
+                ЕСЛИ ЭТОТ БЛОК ФИОЛЕТОВЫЙ - TAILWIND РАБОТАЕТ!
+            </div>
 
-        {/* Навигационные ссылки */}
-        <div className="flex gap-6">
-          <Link
-            to="/"
-            className="text-gray-700 hover:text-blue-600 font-medium transition"
-          >
-            Главная
-          </Link>
-          <Link
-            to="/about"
-            className="text-gray-700 hover:text-blue-600 font-medium transition"
-          >
-            О нас
-          </Link>
-          <Link
-            to="/Auth"
-            className="text-gray-700 hover:text-blue-600 font-medium transition"
-          >
-            Регистрация
-          </Link>
-        </div>
-      </div>
-    </nav>
-  );
+            <header className="bg-gray-100 p-4 flex justify-between items-center border-b border-gray-300">
+                <h1 className="text-xl font-bold">Сайт</h1>
+                <nav>
+                    <ul className="flex gap-4 list-none m-0 p-0">
+                        <li>
+                            <Link to="/" className="text-gray-800 hover:text-blue-600 transition">
+                                Главная
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/about" className="text-gray-800 hover:text-blue-600 transition">
+                                О нас
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/contact" className="text-gray-800 hover:text-blue-600 transition">
+                                Контакты
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </>
+    );
 };
+
+export default Header;

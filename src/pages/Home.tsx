@@ -1,8 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react';
 
-export const Home = () => {
+const Home: React.FC = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <h2 className="text-2xl font-semibold mb-4">Главная страница</h2>
+      <p className="text-gray-700">Добро пожаловать на наш сайт!</p>
+    </div>
+  );
+};
+
+export default Home;

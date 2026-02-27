@@ -1,31 +1,27 @@
-import "./App.css";
-import { Header} from "./components/Header";
-import { Footer } from "./components/Footer";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Auth } from "./pages/Auth";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
+const App: React.FC = () => {
+    return (
+        <BrowserRouter>
+            <div className="flex flex-col min-h-screen">
+                <Header />
+                <main className="flex-1 p-8">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
+        </BrowserRouter>
+    );
+};
 
-function App() {
-  return (
-    <>
-
-    <BrowserRouter>
-      <Header />
-
-      <main className="min-h-screen flex flex-col bg-slate-40 text-slate-900\\">
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/auth" element={<Auth />}></Route>
-          <Route path="/about" element={<About />}></Route>
-        </Routes>
-      </main>
-
-      <Footer/>
-    </BrowserRouter>
-
-    </>
-  );
-}
 export default App;
